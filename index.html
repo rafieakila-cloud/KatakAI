@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#081a11" />
+<meta name="description" content="Katak AI — belajar coding lewat cerita fantasi & tanya jawab cerdas. Kurikulum Kodok 10 bab + kuis, GRATIS tanpa login." />
+<title>Katak AI — Kodok terpintar di hutan coding</title>
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== SVG SPRITE (tanpa emoji di UI) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.4-4.4A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 19V5M9 7h6M9 11h6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-newchat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5l6 6L20 6.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-attach" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5l-8.5 8.5a5.5 5.5 0 0 1-7.8-7.8l8.5-8.5a4 4 0 0 1 5.7 5.7l-8.5 8.5a2.5 2.5 0 0 1-3.5-3.5l7.8-7.8"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M14 3v6h6"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M5 12a7 7 0 0 0 14 0M12 19v3"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3 10v4h3l5 4V6l-5 4zM14 9a4 4 0 0 1 0 6M17 6a8 8 0 0 1 0 12"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path fill="currentColor" d="M3.4 20.4L21.8 12 3.4 3.6l2 6.9L17 12 5.4 13.5z"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.2" fill="#ffffff"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.9 2.9l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.9-2.9l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.9-2.9l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.9 2.9l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 1.5s.8 3.6-1.7 6C9.5 10 7 12.4 7 16a5 5 0 0 0 10 0c0-1.8-.7-3.2-1.6-4.4-.9 1.1-2 1.9-3.3 2.3.9-3.3.2-8.3-1.6-12.4z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.9L23 9.8l-5.9 5 1.8 7.2L12 18.3 5.1 22l1.8-7.2-5.9-5 7.9-.9z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path fill="none" stroke="currentColor" stroke-width="1.7" d="M3 12h18M12 3c2.5 2.6 4 5.7 4 9s-1.5 6.4-4 9c-2.5-2.6-4-5.7-4-9s1.5-6.4 4-9z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 11a8 8 0 1 0-2.3 6.3M20 5v6h-6"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 2l2.6 6.4L21 11l-6.4 2.6L12 20l-2.6-6.4L3 11l6.4-2.6z"/></symbol>
+  <symbol id="i-oai" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-flower" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5c2 3 2 6 0 8-2-2-2-5 0-8zM12 21.5c-2-3-2-6 0-8 2 2 2 5 0 8zM2.5 12c3-2 6-2 8 0-2 2-5 2-8 0zM21.5 12c-3 2-6 2-8 0 2-2 5-2 8 0z"/></g></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path fill="currentColor" d="M3 8l4 4 5-6 5 6 4-4-1.5 10h-15z"/><path fill="currentColor" d="M5.5 20h13v1.5h-13z" opacity=".6"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M2 9.5L12 5l10 4.5-10 4.5z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M6.5 11.5V16c0 1.4 2.5 3 5.5 3s5.5-1.6 5.5-3v-4.5"/></symbol>
+</svg>
+
+<!-- ===== SIDEBAR (desktop) ===== -->
+<aside class="sidebar">
+  <div class="brand">
+    <svg class="frog-mark" viewBox="0 0 56 46" aria-hidden="true">
+      <ellipse cx="13" cy="15" rx="8" ry="8" fill="#0e2b1d"/><ellipse cx="43" cy="15" rx="8" ry="8" fill="#0e2b1d"/>
+      <ellipse cx="28" cy="27" rx="21" ry="15.5" fill="#22c55e"/>
+      <ellipse cx="28" cy="32" rx="13" ry="9" fill="#86efac"/>
+      <circle cx="13" cy="13" r="5" fill="#fff"/><circle cx="43" cy="13" r="5" fill="#fff"/>
+      <circle cx="13.5" cy="14" r="2.3" fill="#081a11"/><circle cx="43.5" cy="14" r="2.3" fill="#081a11"/>
+      <path d="M20.5 28.5q7.5 5.5 15 0" stroke="#081a11" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+      <path d="M46 3l1.4 3.4 3.6.3-2.8 2.3.9 3.5-3.1-1.9-3.1 1.9.9-3.5-2.8-2.3 3.6-.3z" fill="#e6c26b"/>
+    </svg>
+    <span class="brand-word">Katak AI<small>BUGGAMES STUDIO</small></span>
+  </div>
+  <button class="new-chat" id="btnNewChat"><svg><use href="#i-newchat"/></svg>Chat baru</button>
+  <nav class="side-nav">
+    <button class="side-link active" data-tab="chat"><svg><use href="#i-chat"/></svg>Tanya Kodok</button>
+    <button class="side-link" data-tab="belajar"><svg><use href="#i-book"/></svg>Kurikulum Kodok</button>
+  </nav>
+  <div class="history" id="historyListDesk" aria-label="Riwayat chat"></div>
+  <button class="side-settings" id="btnSettingsDesk"><svg><use href="#i-gear"/></svg>Koneksi AI</button>
+</aside>
+
+<!-- ===== MAIN: CHAT ===== -->
+<main class="chat-area" id="view-chat">
+  <header class="topbar">
+    <button class="sq-btn mobile-only" id="btnMenu" aria-label="Riwayat"><svg><use href="#i-menu"/></svg></button>
+
+    <button class="model-pill" id="modelPill" aria-haspopup="true" aria-expanded="false">
+      <svg class="model-ic"><use href="#i-crown"/></svg>
+      <span id="modelPillText">KATAK-1.3</span>
+      <svg class="chev"><use href="#i-chevron-down"/></svg>
+    </button>
+    <div class="model-menu" id="modelMenu" role="menu" hidden>
+      <button class="model-item" data-model="katak-1.3" role="menuitem">
+        <span class="model-item-ic gold"><svg><use href="#i-crown"/></svg></span>
+        <span class="model-item-meta"><b>KATAK-1.3</b><small>Jagoan koding, cerita fantasi &amp; dunia cyber</small></span>
+        <svg class="model-check"><use href="#i-check"/></svg>
+      </button>
+      <button class="model-item" data-model="katak-1" role="menuitem">
+        <span class="model-item-ic green"><svg><use href="#i-globe"/></svg></span>
+        <span class="model-item-meta"><b>KATAK-1</b><small>Tokoh dunia &amp; fakta — jawaban bersumber Wikipedia</small></span>
+        <svg class="model-check"><use href="#i-check"/></svg>
+      </button>
+      <div class="model-divider"></div>
+      <button class="model-item add-api" id="btnAddApiModel" role="menuitem">
+        <span class="model-item-ic dim"><svg><use href="#i-newchat"/></svg></span>
+        <span class="model-item-meta"><b>Add API models</b><small>Pakai key OpenRouter / Gemini / OpenAI</small></span>
+      </button>
+    </div>
+
+    <div style="flex:1"></div>
+    <button class="sq-btn" id="btnSpeak" aria-label="Suara AI" aria-pressed="false"><svg><use href="#i-speaker"/></svg></button>
+  </header>
+
+  <!-- Drawer riwayat (mobile) -->
+  <div class="history-drawer" id="historyDrawer" hidden>
+    <div class="drawer-head"><span>Riwayat</span><button class="sq-btn small" id="btnCloseHistory" aria-label="Tutup"><svg><use href="#i-close"/></svg></button></div>
+    <button class="new-chat drawer-new" id="btnNewChatMobile"><svg><use href="#i-newchat"/></svg>Chat baru</button>
+    <div class="history" id="historyListMobile"></div>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" id="emptyState">
+    <p class="kicker">KATAK AI</p>
+    <h1 class="headline">Kodok terpintar<br/>di hutan coding.</h1>
+    <p class="head-sub">Tanya apa pun — atau lompat ke Kurikulum Kodok:<br/>belajar coding lewat cerita fantasi, gratis selamanya.</p>
+    <div class="frog-hero" id="frogHero"></div>
+    <div class="suggest" id="suggestRow">
+      <button class="chip">Ajari aku Python dari nol</button>
+      <button class="chip">Siapa pencipta Python?</button>
+      <button class="chip">Bikin cerita fantasi tentang loop</button>
+      <button class="chip">Buatkan soal kuis coding</button>
+      <button class="chip">Jelaskan API kayak aku umur 5 tahun</button>
+    </div>
+    <button class="learn-cta" id="learnCta"><svg><use href="#i-book"/></svg>Mulai Kurikulum Kodok — 10 bab, GRATIS</button>
+  </div>
+
+  <div class="messages" id="messages" aria-live="polite"></div>
+
+  <div class="composer" id="composer">
+    <div class="attach-row" id="attachRow" hidden></div>
+    <div class="input-row">
+      <button class="cicon" id="btnAttach" aria-label="Lampirkan foto/file"><svg><use href="#i-attach"/></svg></button>
+      <textarea id="input" rows="1" placeholder="Tanya Kodok…" aria-label="Ketik pertanyaan"></textarea>
+      <button class="cicon" id="btnMic" aria-label="Dikte suara"><svg><use href="#i-mic"/></svg></button>
+      <button class="send" id="btnSend" aria-label="Kirim"><svg><use href="#i-send"/></svg></button>
+      <button class="stop" id="btnStop" aria-label="Hentikan" hidden><svg><use href="#i-stop"/></svg></button>
+    </div>
+  </div>
+</main>
+
+<!-- ===== MAIN: BELAJAR ===== -->
+<main class="learn-area" id="view-belajar" hidden>
+  <header class="learn-topbar">
+    <div>
+      <p class="kicker">KURIKULUM KODOK</p>
+      <h2 class="learn-title">Kuasai coding lewat<br/>cerita fantasi.</h2>
+    </div>
+    <button class="sq-btn" id="btnLearnChat" aria-label="Tanya Kodok" title="Tanya Kodok"><svg><use href="#i-chat"/></svg></button>
+  </header>
+
+  <div class="xp-strip">
+    <div class="xp-level" id="xpLevelBadge"><svg><use href="#i-crown"/></svg><span id="xpLevelText">Berudu Baru</span></div>
+    <div class="xp-bar-wrap">
+      <div class="xp-bar"><i id="xpFill"></i></div>
+      <span class="xp-count" id="xpCount">0 XP</span>
+    </div>
+    <div class="streak" title="Hari berturut-turut belajar"><svg><use href="#i-flame"/></svg><span id="streakCount">1</span></div>
+  </div>
+
+  <div class="bab-grid" id="babGrid"></div>
+</main>
+
+<!-- ===== MAIN: KONEKSI AI (pengaturan) ===== -->
+<main class="settings-area" id="view-settings" hidden>
+  <header class="settings-topbar">
+    <button class="sq-btn" id="btnSettingsBack" aria-label="Kembali"><svg><use href="#i-back"/></svg></button>
+    <span class="settings-title">Koneksi AI</span>
+    <span style="width:38px"></span>
+  </header>
+  <div class="settings-body">
+    <p class="settings-sub">Default <b>KATAK-1.3 &amp; KATAK-1 gratis</b> — langsung jalan, tanpa login &amp; tanpa key (di atas model gratis via Puter). Mau lebih pintar? Tambahkan API key kamu sendiri (tersimpan hanya di perangkat ini).</p>
+    <div class="provider-list" id="providerList"></div>
+    <div class="key-box" id="keyBox">
+      <label for="apiKeyInput" id="apiKeyLabel">API KEY</label>
+      <input type="password" id="apiKeyInput" autocomplete="off" spellcheck="false" placeholder="sk-…" />
+      <label for="modelInput" id="modelLabel" style="margin-top:10px">MODEL</label>
+      <input type="text" id="modelInput" autocomplete="off" spellcheck="false" placeholder="nama-model" />
+    </div>
+    <p class="note">Kunci disimpan lokal di HP ini dan hanya ditembak ke provider yang kamu pilih. Katak AI tidak punya server.</p>
+    <button class="btn-danger-ghost" id="btnClearData"><svg><use href="#i-trash"/></svg>Hapus riwayat &amp; progres</button>
+    <p class="credit">Katak AI · Buggames Studio · GRATIS selamanya dengan model bawaan · <span id="appVersion">v1.0</span></p>
+  </div>
+</main>
+
+<!-- ===== DETAIL BAB ===== -->
+<div class="bab-detail" id="babDetail" hidden role="dialog" aria-label="Detail bab">
+  <div class="bab-detail-head">
+    <button class="sq-btn" id="btnBabBack" aria-label="Kembali"><svg><use href="#i-back"/></svg></button>
+    <div class="bab-detail-title"><span class="bab-no" id="babDetailNo">BAB 1</span><b id="babDetailTitle">Hutan Variabel</b></div>
+    <span class="bab-xp" id="babDetailXp">+30 XP</span>
+  </div>
+  <div class="bab-detail-body">
+    <div class="bab-story" id="babStory"></div>
+    <div class="bab-code"><div class="bab-code-head"><span>contoh.py</span><button class="copy-btn" id="btnBabCopy">Salin</button></div><pre id="babCode"></pre></div>
+    <button class="ask-kodok" id="btnAskKodok"><svg><use href="#i-chat"/></svg>Tanya Kodok tentang bab ini</button>
+    <div class="bab-quiz">
+      <p class="quiz-kicker">KUIS MISTERI</p>
+      <div id="quizList"></div>
+      <button class="btn-gold" id="btnQuizSubmit">Jawab &amp; Klaim XP</button>
+      <p class="quiz-feedback" id="quizFeedback"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BOTTOM NAV (mobile) ===== -->
+<nav class="bottom-nav" aria-label="Navigasi mobile">
+  <button class="m-nav-item active" data-tab="chat"><svg><use href="#i-chat"/></svg><span>Kodok</span></button>
+  <button class="m-nav-item" data-tab="belajar"><svg><use href="#i-book"/></svg><span>Belajar</span></button>
+  <button class="m-nav-item" data-tab="settings"><svg><use href="#i-gear"/></svg><span>Koneksi</span></button>
+</nav>
+
+<!-- ===== CELEBRATION ===== -->
+<div class="celebrate" id="celebrate" hidden role="dialog" aria-label="Selamat">
+  <div class="celebrate-card">
+    <div class="confetti" id="confettiBox"></div>
+    <div id="celebrateFrog"></div>
+    <p class="celebrate-kicker">BAB SELESAI</p>
+    <h3 id="celebrateTitle">Hutan Variabel ditaklukkan!</h3>
+    <p class="celebrate-xp" id="celebrateXp">+30 XP</p>
+    <button class="btn-gold" id="btnCelebrateOk">Mantap!</button>
+  </div>
+</div>
+
+<input type="file" id="fileInput" accept="image/*,.js,.ts,.py,.java,.c,.cpp,.go,.rs,.php,.html,.css,.json,.md,.txt" multiple hidden />
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="kurikulum.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

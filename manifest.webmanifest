@@ -1,0 +1,18 @@
+{
+  "name": "Katak AI — Belajar Koding Lewat Cerita Fantasi",
+  "short_name": "Katak AI",
+  "description": "Belajar coding lewat cerita fantasi bersama Kodok AI. 10 bab Kurikulum Kodok + kuis + sumber Wikipedia. Gratis, tanpa login, jalan di Android.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "id",
+  "dir": "ltr",
+  "theme_color": "#081a11",
+  "background_color": "#081a11",
+  "categories": ["education", "productivity", "games"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
